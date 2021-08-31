@@ -11,6 +11,7 @@ android application helps user to save and order his favorite memories and momen
   <li><b>offline cashing</b> using room database</li>
   <li>creating my own <b>download manager</b> with its multiple features</li>
   <li>using <b>services</b> multiple times to demonstrate its goal</li>
+  <li>using <b>animation</b> </li>
   <li><b>Support multiple language (english-arabic)</b></li>
   <li><b>Support multiple screen sizes</b></li>
   <li><b>Support night mode and light mode</b></li>
@@ -24,9 +25,9 @@ for any question contact Me
 
 <H1>Preview</H1>
 
-![en-black](https://user-images.githubusercontent.com/48160574/131568217-cbe44fc2-ec94-4fc0-8a15-45a8b934e9c2.jpg)
-![en-white](https://user-images.githubusercontent.com/48160574/131568256-34265b7a-4af3-44f8-b0ba-167b202471fb.jpg)
-![ar-black](https://user-images.githubusercontent.com/48160574/131568290-46495cb8-2804-4ab4-a06f-ec06b2c2c24c.jpg)
+![en-black](https://user-images.githubusercontent.com/48160574/131568804-be613d68-031d-400e-b1b7-f20895011e5e.PNG)
+![ar-black](https://user-images.githubusercontent.com/48160574/131568765-4dd8699d-cb4d-4857-961e-c54de071d206.PNG)
+![en-white](https://user-images.githubusercontent.com/48160574/131568775-88760de9-c113-44a3-9b6d-1ff4c1512d9b.PNG)
 
 
 
