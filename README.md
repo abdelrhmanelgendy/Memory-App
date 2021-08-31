@@ -24,5 +24,9 @@ for any question contact Me
 
 <H1>Preview</H1>
 
+![en-black](https://user-images.githubusercontent.com/48160574/131568217-cbe44fc2-ec94-4fc0-8a15-45a8b934e9c2.jpg)
+![en-white](https://user-images.githubusercontent.com/48160574/131568256-34265b7a-4af3-44f8-b0ba-167b202471fb.jpg)
+![ar-black](https://user-images.githubusercontent.com/48160574/131568290-46495cb8-2804-4ab4-a06f-ec06b2c2c24c.jpg)
+
 
 
