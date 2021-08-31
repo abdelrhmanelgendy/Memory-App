@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+app:cardUseCompatPadding="true"
+    android:background="@color/PicassoPlaceHolder"
+    android:backgroundTint="@color/PicassoPlaceHolder"
+    >
+    <ImageView
+        android:background="@color/PicassoPlaceHolder"
+        android:id="@+id/item_favourite_imageView"
+        android:layout_width="200dp"
+        android:layout_height="300dp"
+
+        android:scaleType="centerCrop"
+        />
+
+</androidx.cardview.widget.CardView>

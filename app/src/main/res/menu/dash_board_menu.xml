@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/menu_home" android:title="" android:icon="@drawable/ic_home" app:showAsAction="always"/>
+<item android:id="@+id/menue_favorite" android:title="" android:icon="@drawable/ic_like" app:showAsAction="always"/>
+
+<item android:id="@+id/menue_user" android:title="" android:icon="@drawable/ic_user" app:showAsAction="always"/>
+
+</menu>

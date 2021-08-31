@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end1"
+        motion:constraintSetStart="@id/start1"
+        motion:duration="2000">
+        <KeyFrameSet></KeyFrameSet>
+        <OnSwipe motion:touchAnchorId="@+id/memortViewer_RecyclerView" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start1">
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end1">
+
+
+        <Constraint
+            android:id="@+id/memoryViewer_Linear"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/memortViewer_imgMain" />
+
+        <Constraint
+            android:id="@+id/memortViewer_imgMain"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintStart_toEndOf="@+id/memoryViewer_btn_cancel"
+
+            motion:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@+id/memoryViewer_btn_cancel"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+
+
+        <Constraint
+            android:id="@+id/memortViewer_RecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24sp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@+id/memorrViewer_txtMemoryName" />
+
+        <Constraint
+            android:id="@+id/memorrViewer_txtMemoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20sp"
+            motion:layout_constraintEnd_toStartOf="@+id/memoryViewer_btn_Share"
+            motion:layout_constraintStart_toEndOf="@+id/memortViewer_imgMain"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toEndOf="@+id/memorrViewer_txtMemoryName" />
+
+    </ConstraintSet>
+</MotionScene>

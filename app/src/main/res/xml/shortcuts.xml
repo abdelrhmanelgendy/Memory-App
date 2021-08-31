@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+<shortcut android:shortcutId="cam"
+    android:enabled="true"
+    android:icon="@mipmap/ic_launcher"
+    android:shortcutShortLabel="@string/camera"
+    android:shortcutLongLabel="@string/camera"
+/>
+    <intent
+        android:action="android.intent.action.VIEW"
+        android:targetPackage="com.example.myapplication"
+        android:targetClass="com.example.myapplication.ui.AddNewMemory"/>
+
+</shortcuts>

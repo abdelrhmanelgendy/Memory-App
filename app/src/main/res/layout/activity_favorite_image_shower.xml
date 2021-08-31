@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:theme="@style/normalStatusBar"
+        android:visibility="visible"
+        tools:context=".ui.FavoriteImageShower"
+
+        >
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/activity_favoriteImage_viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:fitsSystemWindows="true"
+            app:layout_constraintBottom_toTopOf="@+id/activity_favoriteImage_txtViewConnection"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.viewpager.widget.ViewPager>
+
+        <ImageView
+            android:id="@+id/activity_favoriteImage_imageBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/circled_gray"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="@id/activity_favoriteImage_viewPager"
+            app:layout_constraintTop_toTopOf="@id/activity_favoriteImage_viewPager"
+            app:tint="@color/white" />
+
+
+        <TextView
+            android:id="@+id/activity_favoriteImage_txtMemoryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="memory name"
+            android:textColor="@color/sub1TextColor"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/activity_favoriteImage_imageBack"
+            app:layout_constraintTop_toTopOf="@id/activity_favoriteImage_viewPager" />
+
+        <LinearLayout
+            android:layoutDirection="locale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="70dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/activity_favoriteImage_viewPager"
+            app:layout_constraintLeft_toLeftOf="@id/activity_favoriteImage_viewPager"
+            app:layout_constraintRight_toRightOf="@id/activity_favoriteImage_viewPager">
+
+            <ImageView
+                android:id="@+id/activity_favoriteImage_imageFavorite"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/circled_gray"
+                android:src="@drawable/favorite_red"
+                app:tint="@color/red" />
+
+            <ImageView
+                android:id="@+id/activity_favoriteImage_imageDownLoad"
+
+                android:layout_width="40dp"
+
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/circled_gray"
+                android:src="@drawable/ic_baseline_download_24" />
+
+            <ImageView
+                android:id="@+id/activity_favoriteImage_imageShare"
+                android:layout_width="40dp"
+
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/circled_gray"
+                android:src="@drawable/ic_baseline_share_24" />
+        </LinearLayout>
+
+        <include
+            android:id="@+id/activity_favoriteImage_txtViewConnection"
+            layout="@layout/dialog_connection"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+

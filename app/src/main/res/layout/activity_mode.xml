@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/FragmentBackGroung"
+        android:orientation="vertical"
+        tools:context=".ui.ActivityDisplayMode">
+
+        <ImageView
+            android:tint="@color/purple"
+            android:id="@+id/displayModeActivity_btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:src="@drawable/ic_baseline_arrow_back_24_black"
+            tools:ignore="UseAppTint" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="100dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:transitionName="modeShangeName"
+                android:id="@+id/circleImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@color/darkMode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:transitionName="modeShangeName"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:src="@drawable/ic_baseline_dark_mode_24"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+                app:layout_constraintStart_toStartOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+
+            >
+
+            <TextView
+
+                android:id="@+id/settingMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="20dp"
+
+                android:fontFamily="@font/alike"
+                android:text="@string/SetMode"
+                android:textColor="@color/mainTextColor"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="25dp" />
+
+            <TextView
+
+                android:id="@+id/displayModeActivity_txtModeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/alike"
+                android:text="Dark"
+                android:textColor="@color/sub2TextColor"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/settingMode"
+                android:textSize="22dp" />
+
+            <Switch
+                android:id="@+id/displayModeActivity_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:checked="false"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:theme="@style/purpleStyle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+
+                app:layout_constraintStart_toEndOf="@+id/displayModeActivity_txtModeName"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.722" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/btnGOLogin"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:tint="@color/purple"
+            android:layout_gravity="center"
+            android:layout_marginTop="200dp"
+
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+    </LinearLayout>
+</layout>

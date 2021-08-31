@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FragmentBackGroung"
+    tools:context=".fragments.UserFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Settings"
+            android:textColor="@color/mainTextColor"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/activitySettings_txtViewAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25sp"
+            android:layout_marginTop="50dp"
+            android:text="@string/account"
+            android:textColor="@color/mainTextColor"
+            android:textSize="25sp"
+            android:transitionName="@string/AccountTransitionName" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/activitySettings_profileImage"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="20sp"
+
+                android:transitionName="@string/profilePictureTransitionName" />
+
+            <TextView
+                android:id="@+id/activitySettings_txtViewName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="15dp"
+
+                android:layout_toStartOf="@+id/activitySettings_personalInfoButton"
+                android:layout_toEndOf="@+id/activitySettings_profileImage"
+                android:fontFamily="@font/asul"
+                android:maxLength="20"
+                android:paddingLeft="10dp"
+                android:text="mostafa mosad elgendy"
+                android:textAlignment="viewStart"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp"
+                android:transitionName="@string/profileNameTransitionName" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/activitySettings_txtViewName"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@+id/activitySettings_profileImage"
+                android:fontFamily="@font/asul"
+                android:paddingLeft="10dp"
+
+                android:text="Personal Info"
+                android:textColor="@color/sub2TextColor"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/activitySettings_personalInfoButton"
+                android:layout_width="45dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="29dp"
+
+                android:background="@drawable/button_go_shape_gray"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24_black" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22sp"
+            android:layout_marginTop="30sp"
+            android:fontFamily="@font/alike"
+            android:text="Settings"
+            android:textColor="@color/mainTextColor"
+            android:textSize="25sp" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="25dp"
+                android:src="#FFEFE4"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_baseline_language_24"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+                app:layout_constraintStart_toStartOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25sp"
+                android:text="Language"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/activitySettings_txtViewCurrentLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40sp"
+                android:layout_marginTop="25sp"
+                android:text="Arabic"
+                android:textSize="18sp"
+                android:textColor="@color/sub2TextColor"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_marginEnd="30dp"
+                android:id="@+id/activitySettings_languageButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_go_shape_gray"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:transitionName="modeShangeName"
+                android:id="@+id/circleImageViewMode"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="25dp"
+                android:src="#ECEBFF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:transitionName="modeShangeName"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_baseline_dark_mode_24"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageViewMode"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageViewMode"
+                app:layout_constraintStart_toStartOf="@+id/circleImageViewMode"
+                app:layout_constraintTop_toTopOf="@+id/circleImageViewMode" />
+
+            <TextView
+                android:id="@+id/textViewMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25sp"
+                android:text="Mode"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/circleImageViewMode"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+
+                android:id="@+id/activitySettings_txtViewCurrentMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="78sp"
+                android:layout_marginTop="25sp"
+                android:text="DAY"
+                android:textSize="18sp"
+                android:textColor="@color/sub2TextColor"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textViewMode"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/activitySettings_ModeButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_go_shape_gray"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+
+
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView_notification"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="25dp"
+                android:src="#E6F7FF"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/ic_baseline_notifications_24"
+                app:layout_constraintBottom_toBottomOf="@+id/circleImageView_notification"
+                app:layout_constraintEnd_toEndOf="@+id/circleImageView_notification"
+                app:layout_constraintStart_toStartOf="@+id/circleImageView_notification"
+                app:layout_constraintTop_toTopOf="@+id/circleImageView_notification" />
+
+            <TextView
+                android:id="@+id/textViewNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="25sp"
+                android:text="Notification"
+                android:textColor="@color/mainTextColor"
+                android:textSize="22sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/circleImageView_notification"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/activitySettings_notificationButton"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/button_go_shape_gray"
+                android:src="@drawable/ic_baseline_keyboard_arrow_right_24_black"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias=".95"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="dpink">#CD6183</color>
+    <color name="wpink">#FA9EBB</color>
+    <color name="wsyan">#E7F8F7</color>
+    <color name="dsyan">#34DAD7</color>
+    <color name="dorange">#5ECECC</color>
+    <color name="dyellow">#FDCF48</color>
+    <color name="wyellow">#FDE7A6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="dgray">#594D4D</color>
+    <color name="wgray">#9E9A9A</color>
+    <color name="card1">#EDBBAB</color>
+    <color name="card2">#B9EFEB</color>
+    <color name="card3">#EAD8A1</color>
+    <color name="purple">#9A85FB</color>
+    <color name="darkMode">#CBC8FF</color>
+    <color name="darkBlue">#7F8A91</color>
+    <color name="yellowLang">#FE955D</color>
+
+
+    <color name="mtrl_textinput_default_box_stroke_color" tools:ovveride="true">#B8B9BD</color>
+
+
+
+
+    <color name="FragmentBackGroung">#35363C</color>
+    <color name="WhitePicassoPlaceHolder">#FFFFFF</color>
+    <color name="BlackFragmentBackGroung">#2F3032</color>
+    <color name="mainTextColor">#B4B5B8</color>
+    <color name="sub1TextColor">#DCD9D9</color>
+    <color name="sub2TextColor">#939497</color>
+    <color name="bottomNavIcon">#A9A9AA</color>
+    <color name="SearchIconTinit">#C6C7CB</color>
+    <color name="searchBarBackground">#494B4E</color>
+    <color name="searchBarTextColor">#C6C7CB</color>
+    <color name="darkPicassoPlaceHolder">#3D3E43</color>
+    <color name="PicassoPlaceHolder">#3D3E43</color>
+    <color name="splashScreen_board">#F1F1F1</color>
+    <color name="splashScreen_dots">#DF507D</color>
+    <color name="recycleyViewBackColor">#373839</color>
+    <color name="outLineBoxColor" >@color/dpink</color>
+    <color name="ProgressDialogTextColor1">#E4E3E3</color>
+    <color name="ProgressDialogTextColor2">#B6B6B6</color>
+
+
+</resources>

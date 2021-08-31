@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="210dp"
+    android:layout_height="wrap_content"
+    android:elevation="5dp"
+    app:cardCornerRadius="20dp"
+    app:cardUseCompatPadding="true"
+    android:id="@+id/memoryViewerAdpter_Cardview"
+
+    android:background="@color/PicassoPlaceHolder"
+    android:backgroundTint="@color/PicassoPlaceHolder"
+    >
+
+    <ImageView
+        android:id="@+id/imgeView_ImageViewAdapter"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+
+        android:background="@color/PicassoPlaceHolder"
+        android:backgroundTint="@color/PicassoPlaceHolder"
+        android:transitionName="@string/memoryImageViewTrasitionName"
+
+        />
+
+    <com.airbnb.lottie.LottieAnimationView
+
+        android:id="@+id/memoryViewer_lottieAnimation"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/like_animmation" />
+
+    <ImageView
+
+        android:id="@+id/imgeView_ImageViewAdapterChecked"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:alpha=".9"
+        android:background="#28000000"
+        android:scaleType="fitCenter"
+        android:src="@drawable/menue_check_white"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/imgeView_ImageViewAdapterAddFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:src="@drawable/favoritr_white" />
+</androidx.cardview.widget.CardView>

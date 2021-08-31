@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="dpink">#DF3168</color>
+    <color name="wpink">#FA9EBB</color>
+    <color name="wsyan">#E7F8F7</color>
+    <color name="dsyan">#34DAD7</color>
+    <color name="dorange">#5ECECC</color>
+    <color name="dyellow">#FDCF48</color>
+    <color name="wyellow">#FDE7A6</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="dgray">#594D4D</color>
+    <color name="wgray">#9E9A9A</color>
+    <color name="card1">#FDDED4</color>
+    <color name="card2">#C8F6F3</color>
+    <color name="card3">#FDE7A6</color>
+    <color name="purple">#9A85FB</color>
+    <color name="darkMode">#CBC8FF</color>
+    <color name="darkBlue">#274557</color>
+    <color name="yellowLang">#FE955D</color>
+
+
+<!--    &lt;!&ndash; Color for the text field's disabled state: 12% black &ndash;&gt;-->
+<!--    <color name="mtrl_textinput_disabled_color" tools:ovveride="true">#FF0000</color>-->
+<!--    &lt;!&ndash; Color for the text field's default box stroke: 42% black &ndash;&gt;-->
+    <color name="mtrl_textinput_default_box_stroke_color" tools:ovveride="true">@color/wgray</color>
+<!--    &lt;!&ndash; Color for the text field's hovered box stroke: 87% black &ndash;&gt;-->
+<!--    <color name="mtrl_textinput_hovered_box_stroke_color" tools:ovveride="true">#DE000000</color>-->
+<!--    &lt;!&ndash; Color for the text field's focused box stroke: transparent &ndash;&gt;-->
+<!--    <color name="mtrl_textinput_focused_box_stroke_color" tools:ovveride="true">#FF0000</color>-->
+<!--    &lt;!&ndash; Color for the text field's default box background: 4% black &ndash;&gt;-->
+<!--    <color name="mtrl_textinput_filled_box_default_background_color" tools:ovveride="true">#FF0000</color>-->
+
+
+
+
+    <color name="WhitePicassoPlaceHolder">#FFFFFF</color>
+
+    <color name="FragmentBackGroung">#FFFFFF</color>
+    <color name="mainTextColor">#000000</color>
+    <color name="sub1TextColor">#DCD9D9</color>
+    <color name="sub2TextColor">#594D4D</color>
+    <color name="red">#DF1D27</color>
+    <color name="BlackFragmentBackGroung">#ffffff</color>
+    <color name="bottomNavIcon">#594D4D</color>
+    <color name="SearchIconTinit">#DC5056</color>
+    <color name="searchBarBackground">#F6C1C0</color>
+    <color name="searchBarTextColor">#DC5056</color>
+    <color name="darkPicassoPlaceHolder">#3D3E43</color>
+    <color name="PicassoPlaceHolder">#FFFFFF</color>
+    <color name="splashScreen_board">#2b2b2b</color>
+    <color name="splashScreen_dots">#DF3168</color>
+    <color name="recycleyViewBackColor">#ffffff</color>
+    <color name="outLineBoxColor" >@color/sub2TextColor</color>
+    <color name="ProgressDialogTextColor1">#000000</color>
+    <color name="ProgressDialogTextColor2">#75736C</color>
+    <color name="connectionViewActiveColor">#009E54</color>
+    <color name="connectionViewOflineColor">#7C7C7C</color>
+
+
+</resources>

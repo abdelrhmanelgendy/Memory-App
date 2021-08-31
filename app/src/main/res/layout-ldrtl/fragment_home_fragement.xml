@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/FragmentBackGroung"
+        tools:context=".fragments.HomeFragement">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/homeFragemt_swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:visibility="gone"
+
+                            android:id="@+id/homeFragemt_progressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <LinearLayout
+                            android:id="@+id/homeFragemt_linearLayoutContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:visibility="visible"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="1.0">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginTop="25sp"
+                                android:fontFamily="@font/archivo_narrow"
+                                android:text="@string/wlcome_message"
+                                android:textAlignment="viewStart"
+                                android:textSize="18sp"
+                                android:textStyle="italic|bold"
+                                android:textColor="@color/sub2TextColor"
+                                />
+
+                            <TextView
+                                android:id="@+id/homeFragemt_txtName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:textAlignment="viewStart"
+
+                                android:textColor="@color/mainTextColor"
+                                android:textSize="22sp"
+
+                                />
+
+                            <TextView
+                                android:layout_marginTop="8dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:text="@string/LatestMemory"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/mainTextColor"
+                                android:textSize="18sp"
+
+                                />
+
+
+                            <androidx.cardview.widget.CardView
+
+                                android:id="@+id/homeFragemt_Card_oldMemory"
+                                android:layout_width="match_parent"
+                                android:layout_height="160dp"
+
+
+                                app:cardBackgroundColor="@color/dpink"
+
+                                app:cardCornerRadius="22dp"
+                                app:cardElevation="4dp"
+                                app:cardUseCompatPadding="true">
+
+                                <RelativeLayout
+                                    android:id="@+id/homeFragemt_relative_main"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                                    android:visibility="visible">
+
+                                    <ImageView
+
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentBottom="true"
+
+                                        android:layout_marginLeft="75dp"
+                                        android:layout_marginTop="59dp"
+                                        android:layout_marginRight="10sp"
+
+                                        android:layout_marginBottom="-55dp"
+                                        android:alpha=".2"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/circle" />
+
+                                    <ImageView
+
+                                        android:layout_width="100dp"
+                                        android:layout_height="wrap_content"
+
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+
+
+                                        android:layout_marginTop="-120dp"
+                                        android:layout_marginRight="5dp"
+
+
+                                        android:alpha=".2"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/square" />
+
+                                    <ImageView
+
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginLeft="-50dp"
+                                        android:layout_marginTop="-80dp"
+
+                                        android:alpha=".2"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/square" />
+
+                                    <TextView
+                                        android:id="@+id/homeFragemt_txtLocation"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginRight="14dp"
+
+                                        android:textColor="#E6E2E2"
+                                        android:textSize="18sp" />
+
+                                    <TextView
+                                        android:id="@+id/homeFragemt_txtMemoryName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/homeFragemt_txtLocation"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="4dp"
+                                        android:layout_marginRight="14dp"
+
+                                        android:textColor="#F4F4F4"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+
+                                        android:id="@+id/homeFragemt_txtDaysDate"
+
+                                        android:layout_width="120dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginLeft="140dp"
+                                        android:layout_marginTop="4dp"
+
+
+                                        android:textAlignment="center"
+                                        android:textColor="#E6E2E2"
+                                        android:textSize="20sp" />
+
+                                    <de.hdodenhof.circleimageview.CircleImageView
+
+                                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/homeFragemt_imgPreview_img1"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginRight="10dp"
+                                        android:layout_marginBottom="20dp"
+                                        app:civ_border_color="@color/white"
+                                        app:civ_border_width="1dp" />
+
+                                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/homeFragemt_imgPreview_img2"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginRight="-15dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_toLeftOf="@id/homeFragemt_imgPreview_img1"
+
+                                        app:civ_border_color="@color/white"
+                                        app:civ_border_width="1dp" />
+
+                                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                        android:id="@+id/homeFragemt_imgPreview_img3"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginRight="-15dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_toLeftOf="@id/homeFragemt_imgPreview_img2"
+
+                                        app:civ_border_color="@color/white"
+
+                                        app:civ_border_width="1dp" />
+
+                                    <androidx.constraintlayout.widget.ConstraintLayout
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginRight="-15dp"
+                                        android:layout_marginBottom="20dp"
+                                        android:layout_toLeftOf="@id/homeFragemt_imgPreview_img3"
+
+
+                                        >
+
+                                        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                                            android:id="@+id/homeFragemt_imgPreview_imgCount"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:src="@color/white"
+                                            app:civ_border_color="@color/white"
+                                            app:civ_border_width="1dp"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintRight_toLeftOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+
+                                        <TextView
+                                            android:id="@+id/homeFragemt_imgPreview_tvCount"
+                                            android:layout_width="wrap_content"
+
+                                            android:layout_height="wrap_content"
+
+                                            android:text="+1"
+
+                                            android:textAlignment="center"
+                                            android:textColor="@color/dpink"
+                                            android:textSize="20sp"
+
+
+                                            android:textStyle="bold"
+                                            app:layout_constraintBottom_toBottomOf="parent"
+                                            app:layout_constraintLeft_toLeftOf="parent"
+                                            app:layout_constraintRight_toRightOf="parent"
+                                            app:layout_constraintTop_toTopOf="parent" />
+                                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                                    <Button
+
+                                        android:id="@+id/homeFragemt_TV_arrowGo"
+                                        android:layout_width="45dp"
+                                        android:layout_height="40dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginBottom="20sp"
+                                        android:background="@drawable/button_go_shape"
+
+                                        android:backgroundTint="@color/white"
+                                        android:theme="@style/grayButtons"
+
+
+                                        />
+
+                                    <ImageView
+                                        android:id="@+id/homeFragemt_IMG_arrowGo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_alignParentBottom="true"
+                                        android:layout_marginLeft="24dp"
+                                        android:layout_marginBottom="28sp"
+                                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                                        android:src="@drawable/ic_baseline_arrow_forward_home"
+
+                                        android:theme="@style/grayButtons" />
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <TextView
+                                android:textColor="@color/mainTextColor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="12dp"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/AllMemories"
+                                android:textSize="21sp" />
+
+                            <TextView
+                                android:id="@+id/homeFragemt_TV_AddNew"
+                                android:layout_width="wrap_content"
+                                android:layout_height="40dp"
+                                android:layout_gravity="end"
+android:layout_marginLeft="15dp"
+                                android:layout_marginTop="-31dp"
+                                android:drawableLeft="@drawable/ic_baseline_add_24"
+                                android:text="@string/Add"
+                                android:textColor="@color/dpink"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/homeFragemt_Rec_allMemories"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layoutAnimation="@anim/recycler_view_fade_in_layout_animator"
+                                android:padding="10dp"
+
+                                tools:listitem="@layout/old_memory_item" />
+
+                        </LinearLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    </FrameLayout>
+</layout>

@@ -1,0 +1,98 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.BooksApp" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimaryVariant">@color/wpink</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/dpink</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">@color/dpink</item>
+        <item name="colorPrimaryDark">#FF9800</item>
+        <item name="colorPrimary">@color/wgray</item>
+        <item name="android:windowAnimationStyle" >@style/AnimationStyle</item>
+
+
+
+    </style>
+
+
+    <!--    <style name="MyTextInputLayout_overlay">-->
+    <!--        <item name="colorOnSurface">@color/dyellow</item>-->
+    <!--        <item name="colorPrimary">@color/dpink</item>-->
+    <!--    </style>-->
+
+
+    <style name="Buttom_w_gray12" parent="android:style/Widget.Button">
+        <item name="colorPrimary">@color/dpink</item>
+        <item name="colorPrimaryVariant">@color/wpink</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dpink</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">@color/dpink</item>
+    </style>
+
+
+    <style name="normalStatusBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:statusBarColor" tools:targetApi="l">#373636</item>
+        <item name="colorPrimary">@color/darkBlue</item>
+        <item name="colorPrimaryVariant">@color/darkBlue</item>
+        <item name="colorOnPrimary">@color/darkBlue</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/darkBlue</item>
+    </style>
+
+    <style name="PinkButtons" parent="android:style/Widget.Button">
+        <item name="colorPrimary">@color/dpink</item>
+
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="WhiteButtons" parent="android:style/Widget.Button">
+        <item name="colorPrimary">#FAF8F8</item>
+
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="grayButtons" parent="android:style/Widget.Button">
+        <item name="colorPrimary">@color/white</item>
+
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AnimationStyle" parent="@android:style/Animation.Activity" >
+        <item name="android:activityOpenEnterAnimation" >@anim/activity_slide_in_right</item>
+        <item name="android:activityCloseExitAnimation" >@anim/activity_slide_out_right</item>
+        <item name="android:activityOpenExitAnimation" >@anim/activity_slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation" >@anim/activity_slide_in_left</item>
+
+    </style>
+
+    <style name="purpleStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimaryVariant">@color/wpink</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/purple</item>
+
+
+    </style>
+    <style name="yellowStyle" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimaryVariant">@color/wpink</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/yellowLang</item>
+
+
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/mainTextColor</item>
+        <item name="boxStrokeWidth">2dp</item>
+    </style>
+
+        
+
+        
+</resources>

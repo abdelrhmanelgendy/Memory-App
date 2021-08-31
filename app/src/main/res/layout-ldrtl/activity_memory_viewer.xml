@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/FragmentBackGroung">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/constraintLayoutMotion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/FragmentBackGroung"
+
+            android:orientation="vertical"
+            app:layoutDescription="@xml/activity_memory_viewer_xml_constraintlayout_scene2_ar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+
+                android:id="@+id/memoryViewer_btn_cancel"
+                android:layout_width="40dp"
+
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_arrow_back_24_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/mainTextColor" />
+
+            <TextView
+                android:id="@+id/memorrViewer_txtMemoryName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+
+                android:maxLength="20"
+                android:text="Account"
+                android:textAlignment="viewStart"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp"
+                android:transitionName="@string/AccountTransitionName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/memoryViewer_btn_cancel"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/memortViewer_imgMain"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+
+                android:transitionName="@string/memoryImageViewTrasitionName"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/memorrViewer_txtMemoryName"
+
+
+                />
+
+            <LinearLayout
+                android:id="@+id/memoryViewer_Linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/memortViewer_imgMain">
+
+                <TextView
+                    android:id="@+id/memortViewer_memoryTittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Graduation Day"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="21dp" />
+
+                <TextView
+                    android:id="@+id/memortViewer_memoryAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:drawableLeft="@drawable/ic_baseline_location_on_24"
+
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="Cairo Egypt"
+                    android:textAlignment="center"
+                    android:textColor="@color/sub2TextColor"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/memortViewer_memoryDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="11-20-2020"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkBlue"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/memortViewer_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/memoryViewer_Linear"
+                tools:listitem="@layout/image_viewer_image_item" />
+
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/speratedLatoutMemoryViewer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/memoryViewer_btn_Download"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_file_download_24_black"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/mainTextColor" />
+
+            <ImageView
+
+                android:id="@+id/memoryViewer_btn_Share"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_share_24"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/memoryViewer_btn_Download"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/mainTextColor" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <include layout="@layout/dialog_connection"
+            android:id="@+id/memoryViewer_dailogConnection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:visibility="visible"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

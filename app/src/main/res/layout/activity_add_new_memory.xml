@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FragmentBackGroung"
+    android:orientation="vertical"
+    tools:context=".ui.AddNewMemory">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/picContraint"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/activityAddNewMemory_IMG_main"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+
+
+            android:foregroundGravity="center"
+            android:padding="15dp"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/activityAddNewMemory_TV_choose"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginBottom="20sp"
+            android:src="@drawable/camera"
+            app:layout_constraintBottom_toBottomOf="@+id/activityAddNewMemory_IMG_main"
+            app:layout_constraintStart_toStartOf="@+id/activityAddNewMemory_IMG_main"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInput1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textAlignment="viewStart"
+        android:textColorHint="@color/sub2TextColor"
+        android:textCursorDrawable="@color/sub2TextColor"
+        app:boxStrokeColor="@color/outLineBoxColor"
+        app:hintTextColor="@color/outLineBoxColor"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/picContraint">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/activityAddNewMemory_txtTittle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/Memorytittle"
+            android:inputType="text"
+            android:maxLength="15"
+            android:textAlignment="viewStart"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/sub2TextColor"
+            android:textCursorDrawable="@color/sub2TextColor"
+
+            android:textSize="18dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInput2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColorHint="@color/sub2TextColor"
+        android:textCursorDrawable="@color/sub2TextColor"
+        app:boxStrokeColor="@color/outLineBoxColor"
+        app:hintTextColor="@color/outLineBoxColor"
+        app:layout_constraintTop_toBottomOf="@+id/txtInput1"
+
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/activityAddNewMemory_txtDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/Memorydescription"
+            android:inputType="text"
+            android:maxLength="50"
+            android:maxLines="2"
+            android:textColor="@color/mainTextColor"
+            android:textColorHint="@color/sub2TextColor"
+            android:textCursorDrawable="@color/sub2TextColor"
+            android:textSize="18dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLocation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtInput2">
+
+        <TextView
+            android:id="@+id/activityAddNewMemory_txtLocation"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_weight="2"
+            android:maxLines="2"
+            android:paddingStart="25sp"
+            android:textColor="@color/mainTextColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+
+        <ImageView
+            android:id="@+id/activityAddNewMemory_btnAddLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_baseline_fmd_good_24" />
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/activityAddNewMemory_Rec"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/recycleyViewBackColor"
+        android:layoutAnimation="@anim/recycler_view_fade_in_layout_animator"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearButtons"
+        app:layout_constraintTop_toBottomOf="@+id/linearLocation" />
+
+    <LinearLayout
+        android:id="@+id/linearButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/activityAddNewMemory_txtViewConnection">
+
+        <Button
+            android:id="@+id/add_new_btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="@string/Cancel"
+            android:theme="@style/Buttom_w_gray12" />
+
+        <Button
+            android:id="@+id/add_new_btnAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="@string/Add"
+            android:theme="@style/Buttom_w_gray12" />
+
+    </LinearLayout>
+
+
+    <include
+        android:id="@+id/activityAddNewMemory_txtViewConnection"
+        layout="@layout/dialog_connection"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

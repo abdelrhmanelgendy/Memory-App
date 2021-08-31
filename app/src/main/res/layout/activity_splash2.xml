@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/FragmentBackGroung"
+    android:theme="@style/normalStatusBar"
+    tools:context=".ui.SplashActivity"
+
+    >
+
+    <ImageView
+
+        android:id="@+id/Splash2_imageLogo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:alpha="1"
+        android:src="@drawable/board"
+        android:transitionName="@string/memoryLogoTransitionName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/splashScreen_board"
+
+        />
+
+    <ImageView
+        android:id="@+id/Splash2_imageDots"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:alpha="1"
+
+        android:src="@drawable/dots"
+        android:transitionName="imageLogo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/splashScreen_dots" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
