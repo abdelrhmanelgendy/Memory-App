@@ -32,9 +32,15 @@ public class ActivityLanguage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String deviceLanguage = "en";
+        try {
 
-        String deviceLanguage = LanguageHelper.getPersistData(this);
-        LanguageHelper.setLocale(this, deviceLanguage);
+
+            deviceLanguage = LanguageHelper.getPersistData(this);
+            LanguageHelper.setLocale(this, deviceLanguage);
+        } catch (Exception e) {
+
+        }
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         activityLanguageBinding = DataBindingUtil.setContentView(this, R.layout.activity_language);
@@ -79,15 +85,21 @@ public class ActivityLanguage extends AppCompatActivity {
         activityLanguageBinding.languageActivityRadioEnglish.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    activityLanguageBinding.languageActivityRadioArabic.setChecked(false);
-                    Log.d(TAG, "onCheckedChanged: englishPressed");
-                    LanguageHelper.setLocale(ActivityLanguage.this, LanguageHelper.ENGLISH_CODE);
-                    LanguageHelper.persist(getApplicationContext(), LanguageHelper.ENGLISH_CODE);
-                    if (!Is_firstTime) {
-                        reopen();
-                    }
+                try {
 
+
+                    if (isChecked) {
+                        activityLanguageBinding.languageActivityRadioArabic.setChecked(false);
+                        Log.d(TAG, "onCheckedChanged: englishPressed");
+                        LanguageHelper.setLocale(ActivityLanguage.this, LanguageHelper.ENGLISH_CODE);
+                        LanguageHelper.persist(getApplicationContext(), LanguageHelper.ENGLISH_CODE);
+                        if (!Is_firstTime) {
+                            reopen();
+                        }
+
+                    }
+                } catch (Exception e) {
+                    return;
                 }
 
             }
@@ -95,15 +107,21 @@ public class ActivityLanguage extends AppCompatActivity {
         activityLanguageBinding.languageActivityRadioArabic.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    activityLanguageBinding.languageActivityRadioEnglish.setChecked(false);
-                    Log.d(TAG, "onCheckedChanged: arabic changes");
+                try {
 
-                    LanguageHelper.setLocale(ActivityLanguage.this, LanguageHelper.ARABIC_CODE);
-                    LanguageHelper.persist(getApplicationContext(), LanguageHelper.ARABIC_CODE);
-                    if (!Is_firstTime) {
-                        reopen();
+
+                    if (isChecked) {
+                        activityLanguageBinding.languageActivityRadioEnglish.setChecked(false);
+                        Log.d(TAG, "onCheckedChanged: arabic changes");
+
+                        LanguageHelper.setLocale(ActivityLanguage.this, LanguageHelper.ARABIC_CODE);
+                        LanguageHelper.persist(getApplicationContext(), LanguageHelper.ARABIC_CODE);
+                        if (!Is_firstTime) {
+                            reopen();
+                        }
                     }
+                } catch (Exception e) {
+
                 }
             }
         });
@@ -111,9 +129,16 @@ public class ActivityLanguage extends AppCompatActivity {
         activityLanguageBinding.btnChangeMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+
+
                 Intent chooseMode = new Intent(ActivityLanguage.this, ActivityDisplayMode.class);
                 chooseMode.setAction(SplashActivity.FiRST_TIME_OPEN);
                 startActivity(chooseMode);
+                }catch (Exception e)
+                {
+
+                }
 
             }
         });

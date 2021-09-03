@@ -29,7 +29,7 @@ public class ActivityDisplayMode extends AppCompatActivity {
     ImageView btnOpenLoginn;
     Switch switchModeChange;
     TextView textViewModeName;
-    boolean is_first_time=false;
+    boolean is_first_time = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,27 +40,21 @@ public class ActivityDisplayMode extends AppCompatActivity {
         initViews();
         getCurrentMode();
         Intent languageIntent = getIntent();
-        if (languageIntent.getAction()!=null)
-        {
+        if (languageIntent.getAction() != null) {
 
-            if (languageIntent.getAction().equals(SplashActivity.FiRST_TIME_OPEN))
-            {
-                is_first_time=true;
+            if (languageIntent.getAction().equals(SplashActivity.FiRST_TIME_OPEN)) {
+                is_first_time = true;
                 btnBack.setVisibility(View.GONE);
                 btnOpenLoginn.setVisibility(View.VISIBLE);
-            }
-            else
-            {
-                is_first_time=false;
+            } else {
+                is_first_time = false;
 
                 btnBack.setVisibility(View.VISIBLE);
                 btnOpenLoginn.setVisibility(View.GONE);
             }
 
-        }
-        else
-        {
-            is_first_time=false;
+        } else {
+            is_first_time = false;
 
             btnBack.setVisibility(View.VISIBLE);
             btnOpenLoginn.setVisibility(View.GONE);
@@ -68,65 +62,80 @@ public class ActivityDisplayMode extends AppCompatActivity {
         switchModeChange.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                String currentMode = DarkModeHelper.getPersistData();
-                Log.d("TAG21", "getCurrentMode: " + currentMode);
+                try {
 
 
-                if (isChecked) {
+                    String currentMode = DarkModeHelper.getPersistData();
+                    Log.d("TAG21", "getCurrentMode: " + currentMode);
 
-                    DarkModeHelper.setMode(AppCompatDelegate.MODE_NIGHT_YES);
-                    textViewModeName.setText(getResources().getString(R.string.ON));
-                    if (!is_first_time)
-                    {
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                startActivity(intent);
-                                finish();
-                            }
-                        }, 300);
+
+                    if (isChecked) {
+
+                        DarkModeHelper.setMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        textViewModeName.setText(getResources().getString(R.string.ON));
+                        if (!is_first_time) {
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }, 300);
+                        }
+
+
+                    } else {
+                        DarkModeHelper.setMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        textViewModeName.setText(getResources().getString(R.string.OFF));
+
+                        if (!is_first_time) {
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }, 300);
+                        }
+
                     }
-
-
-                } else {
-                    DarkModeHelper.setMode(AppCompatDelegate.MODE_NIGHT_NO);
-                    textViewModeName.setText(getResources().getString(R.string.OFF));
-
-                    if (!is_first_time)
-                    {
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                startActivity(intent);
-                                finish();
-                            }
-                        }, 300);
-                    }
-
-                }
 
 //                    startActivity(intent);
 
+                } catch (Exception e) {
+                    return;
+                }
             }
+
 
         });
 
         btnOpenLoginn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try {
+
+
                 SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 SharedPreferences.Editor edit = defaultSharedPreferences.edit();
-                edit.putBoolean(SplashActivity.IS_FIRST_TIME,false);
+                edit.putBoolean(SplashActivity.IS_FIRST_TIME, false);
                 edit.apply();
-                Intent loginIntent=new Intent(ActivityDisplayMode.this,SplashActivity.class);
+                Intent loginIntent = new Intent(ActivityDisplayMode.this, SplashActivity.class);
                 startActivity(loginIntent);
+                }
+                catch (Exception e)
+                {
+                    return;
+                }
             }
         });
     }
 
 
-
     private void getCurrentMode() {
+        try {
+
+
         DarkModeHelper.init(this);
         String currentMode = DarkModeHelper.getCurrentMode();
         Log.d("TAG21", "getCurrentMode: " + currentMode);
@@ -137,6 +146,11 @@ public class ActivityDisplayMode extends AppCompatActivity {
             textViewModeName.setText(getResources().getString(R.string.ON));
             switchModeChange.setChecked(true);
         }
+        }
+        catch (Exception e)
+        {
+            return;
+        }
 
 
     }
@@ -146,7 +160,7 @@ public class ActivityDisplayMode extends AppCompatActivity {
         btnOpenLoginn = findViewById(R.id.btnGOLogin);
         textViewModeName = findViewById(R.id.displayModeActivity_txtModeName);
         switchModeChange = findViewById(R.id.displayModeActivity_switch);
-        btnBack.setOnClickListener(i->onBackPressed());
+        btnBack.setOnClickListener(i -> onBackPressed());
     }
 
 
