@@ -29,7 +29,7 @@ for any question contact Me
 <H1>Preview</H1>
 
 ![en-black](https://user-images.githubusercontent.com/48160574/131568804-be613d68-031d-400e-b1b7-f20895011e5e.PNG)
-![ar-black](https://user-images.githubusercontent.com/48160574/131568765-4dd8699d-cb4d-4857-961e-c54de071d206.PNG)
+![ar-black](https://user-images.githubusercontent.com/48160574/131960386-249276c8-acbf-4c31-bb92-5742ae1d91b9.png)
 ![en-white](https://user-images.githubusercontent.com/48160574/131568775-88760de9-c113-44a3-9b6d-1ff4c1512d9b.PNG)
 
 
