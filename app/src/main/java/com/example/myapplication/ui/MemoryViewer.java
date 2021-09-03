@@ -116,18 +116,7 @@ public class MemoryViewer extends AppCompatActivity implements DownLoadInfo {
 
     void setMenueVisibiltiy(boolean visibiltiy) {
         btnDownLoad.setVisibility(visibiltiy ? View.VISIBLE : View.GONE);
-//        btnShare.setVisibility(visibiltiy ? View.VISIBLE : View.GONE);
-//        if (visibiltiy) {
-//            startConstraintSet.setVisibility(motionsId[0], ConstraintSet.VISIBLE);
-//            startConstraintSet.setVisibility(motionsId[1], ConstraintSet.VISIBLE);
-//            endConstraintSet.setVisibility(motionsId[2], ConstraintSet.VISIBLE);
-//            endConstraintSet.setVisibility(motionsId[3], ConstraintSet.VISIBLE);
-//        } else {
-//            startConstraintSet.setVisibility(motionsId[0], ConstraintSet.INVISIBLE);
-//            startConstraintSet.setVisibility(motionsId[1], ConstraintSet.INVISIBLE);
-//            endConstraintSet.setVisibility(motionsId[2], ConstraintSet.INVISIBLE);
-//            endConstraintSet.setVisibility(motionsId[3], ConstraintSet.INVISIBLE);
-//        }
+
 
 
     }

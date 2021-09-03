@@ -177,13 +177,6 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
         progressDialog.show(getResources().getString(R.string.gettingPhotoPath));
         ImageToUpload imageToUpload = inPutList.get(swipedPosition);
         ArrayList<Uri> uriBitbam = getUriBitbam(imageToUpload);
-//        Log.d(TAG, "share: "+uriBitbam.toString());
-//        Intent sharerIntent = new Intent(Intent.ACTION_SEND);
-//        String stringToShare = "Memory Tittle: " + imageToUpload.getMemoryTittle();
-//        sharerIntent.setType("image/png");
-//        sharerIntent.putExtra(Intent.EXTRA_TEXT, stringToShare);
-//        sharerIntent.putExtra(Intent.EXTRA_STREAM, uriBitbam);
-//        startActivity(sharerIntent);
 
 
     }

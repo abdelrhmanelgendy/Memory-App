@@ -215,20 +215,24 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
             imageViewProfilePic.setImageDrawable(getResources().getDrawable(R.drawable.ic_profile));
 
         } else {
-            Glide.with(getContext())
-                    .load(profileUrl)
-                    .into(imageViewProfilePic);
+            if (getContext()!=null) {
+                Glide.with(getContext())
+                        .load(profileUrl)
+                        .into(imageViewProfilePic);
+            }
         }
 
     }
 
     private void storeUserDataIntoSharedPrefrence(Context context, String name, String profileUrl) {
-        Log.d(TAG, "storeUserNameIntoSharedPrefrence: " + name + "  " + profileUrl);
-        SharedPreferences sharedPreferences = context.getSharedPreferences(USER_DATA_FILE, Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
-        edit.putString(USER_NAME, name);
-        edit.putString(USER_PROFILEPICTURE, profileUrl);
-        edit.apply();
+        if (context!=null) {
+            Log.d(TAG, "storeUserNameIntoSharedPrefrence: " + name + "  " + profileUrl);
+            SharedPreferences sharedPreferences = context.getSharedPreferences(USER_DATA_FILE, Context.MODE_PRIVATE);
+            SharedPreferences.Editor edit = sharedPreferences.edit();
+            edit.putString(USER_NAME, name);
+            edit.putString(USER_PROFILEPICTURE, profileUrl);
+            edit.apply();
+        }
     }
 
     private void getStoredUserDataFromSharedPrefrence(Context context) {

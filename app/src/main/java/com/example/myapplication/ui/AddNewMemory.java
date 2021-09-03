@@ -417,40 +417,46 @@ public class AddNewMemory extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == IMAGE_PICK_UP_REQ_CODE && resultCode == RESULT_OK) {
-            if (data.getClipData() != null) {
-                int itemCount = data.getClipData().getItemCount();
-                for (int i = 0; i < itemCount; i++) {
-                    Uri uri = data.getClipData().getItemAt(i).getUri();
+        try {
 
-                    Image image1 = new Image(i, uri.toString());
-                    tempList.add(image1);
+            if (requestCode == IMAGE_PICK_UP_REQ_CODE && resultCode == RESULT_OK) {
+                if (data.getClipData() != null) {
+                    int itemCount = data.getClipData().getItemCount();
+                    for (int i = 0; i < itemCount; i++) {
+                        Uri uri = data.getClipData().getItemAt(i).getUri();
+
+                        Image image1 = new Image(i, uri.toString());
+                        tempList.add(image1);
 
 
+                    }
+
+                    resizeImageInList();
+
+
+                    addNewMemoryAdapter.notifyDataSetChanged();
+
+
+                } else {
+                    try {
+                        addSingleImage(data.getData());
+                    } catch (Exception e) {
+                        return;
+                    }
                 }
 
-                resizeImageInList();
-
-
-                addNewMemoryAdapter.notifyDataSetChanged();
-
-
-            } else {
-                try {
-                    addSingleImage(data.getData());
-                } catch (Exception e) {
-                    return;
-                }
+            } else if (requestCode == EDITE_IMAGE_REQ_CODE && data != null && resultCode == RESULT_OK) {
+                replaceImage(data.getData());
+            } else if (requestCode == IMAGE_PICK_UP_SINGLE_REQ_CODE && data != null && resultCode == RESULT_OK) {
+                Resizer.get(getApplicationContext());
+                String s = Resizer.reduceBitmab(data.getData());
+                imageViewMain.setImageURI(Uri.fromFile(new File(s)));
+                IMAGE_PICKED = 1;
+                mainImageUri = Uri.fromFile(new File(s));
             }
 
-        } else if (requestCode == EDITE_IMAGE_REQ_CODE && data != null && resultCode == RESULT_OK) {
-            replaceImage(data.getData());
-        } else if (requestCode == IMAGE_PICK_UP_SINGLE_REQ_CODE && data != null && resultCode == RESULT_OK) {
-            Resizer.get(getApplicationContext());
-            String s = Resizer.reduceBitmab(data.getData());
-            imageViewMain.setImageURI(Uri.fromFile(new File(s)));
-            IMAGE_PICKED = 1;
-            mainImageUri = Uri.fromFile(new File(s));
+        } catch (Exception e) {
+            return;
         }
 
     }
@@ -733,14 +739,27 @@ public class AddNewMemory extends AppCompatActivity implements View.OnClickListe
             case R.id.add_new_btnAdd:
                 Log.d(TAG, "onClick: ");
                 fromAdding = true;
-                addMemortTOFireBase();
+                try {
+
+
+                    addMemortTOFireBase();
+
+                } catch (Exception e) {
+                    return;
+                }
                 break;
             case R.id.add_new_btnCancel:
+                try {
 
-                deleteResizedImages();
-                deleteMainImageFromFiles();
-                Log.d(TAG, "onClick: cancel ");
-                UserCanceld();
+
+                    deleteResizedImages();
+                    deleteMainImageFromFiles();
+                    Log.d(TAG, "onClick: cancel ");
+                    UserCanceld();
+
+                } catch (Exception e) {
+                    return;
+                }
                 break;
 
             case R.id.activityAddNewMemory_btnAddLocation:
@@ -769,82 +788,97 @@ public class AddNewMemory extends AppCompatActivity implements View.OnClickListe
     }
 
     private void startGettingLocation() {
-        gpsOpen.turnGPSOn(new GPSOpen.onGpsListener() {
-            @Override
-            public void gpsStatus(boolean isGPSEnable) {
-                if (isGPSEnable) {
-                    getLocationIntoAddress();
-                    ProgressDialog dialog = new ProgressDialog(AddNewMemory.this, true);
-                    dialog.show(getResources().getString(R.string.gettingyourlocation));
-
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
+        try {
 
 
-                            dialog.dismiss();
-                        }
-                    }, 1000);
+            gpsOpen.turnGPSOn(new GPSOpen.onGpsListener() {
+                @Override
+                public void gpsStatus(boolean isGPSEnable) {
+                    if (isGPSEnable) {
+                        getLocationIntoAddress();
+                        ProgressDialog dialog = new ProgressDialog(AddNewMemory.this, true);
+                        dialog.show(getResources().getString(R.string.gettingyourlocation));
+
+                        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+
+
+                                dialog.dismiss();
+                            }
+                        }, 1000);
 
 
 //                    getLocationIntoAddress();
 
 
-                } else {
-                    Toast.makeText(AddNewMemory.this, getResources().getString(R.string.enableyourGPS), Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(AddNewMemory.this, getResources().getString(R.string.enableyourGPS), Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+
+        } catch (Exception e) {
+            return;
+        }
 
     }
 
     private void getLocationIntoAddress() {
-        FusedLocationProviderClient fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
+        try {
 
-        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            chechForLocationPermissions();
-        }
-        Task<Location> lastLocation = fusedLocationProviderClient.getLastLocation();
-        lastLocation.addOnCompleteListener(new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                if (task.isSuccessful()) {
 
-                    try {
-                        Location result = task.getResult();
-                        Log.d(TAG, "onComplete: " + result);
-                        if (result != null) {
-                            userCurrentLocation = result;
-                            double latitude = result.getLatitude();
-                            double longitude = result.getLongitude();
-                            Geocoder geocoder = new Geocoder(getApplicationContext());
+            FusedLocationProviderClient fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getApplicationContext());
 
-                            List<Address> fromLocation = geocoder.getFromLocation(latitude, longitude, 1);
-                            if (fromLocation.size() > 0) {
-                                Log.d(TAG, "onComplete: " + fromLocation.toString());
-                                Address address = fromLocation.get(0);
-                                String mohafza = address.getAdminArea();
-                                String area = address.getLocality();
-                                String markz = address.getSubAdminArea();
-                                String country = address.getCountryName();
-                                String specificLocation = country + "," + mohafza + "," + markz + "," + area;
-                                txtLocationAddress.setText(specificLocation);
-                                if (fromAdding) {
-                                    uploadImages();
+            if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                chechForLocationPermissions();
+            }
+            Task<Location> lastLocation = fusedLocationProviderClient.getLastLocation();
+            lastLocation.addOnCompleteListener(new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+                    if (task.isSuccessful()) {
+
+                        try {
+                            Location result = task.getResult();
+                            Log.d(TAG, "onComplete: " + result);
+                            if (result != null) {
+                                userCurrentLocation = result;
+                                double latitude = result.getLatitude();
+                                double longitude = result.getLongitude();
+                                Geocoder geocoder = new Geocoder(getApplicationContext());
+
+                                List<Address> fromLocation = geocoder.getFromLocation(latitude, longitude, 1);
+                                if (fromLocation.size() > 0) {
+                                    Log.d(TAG, "onComplete: " + fromLocation.toString());
+                                    Address address = fromLocation.get(0);
+                                    String mohafza = address.getAdminArea();
+                                    String area = address.getLocality();
+                                    String markz = address.getSubAdminArea();
+                                    String country = address.getCountryName();
+                                    String specificLocation = country + "," + mohafza + "," + markz + "," + area;
+                                    txtLocationAddress.setText(specificLocation);
+                                    if (fromAdding) {
+                                        uploadImages();
+                                    }
+
                                 }
-
+                            } else {
+                                Toast.makeText(AddNewMemory.this, getResources().getString(R.string.locationGettingError), Toast.LENGTH_SHORT).show();
                             }
-                        } else {
-                            Toast.makeText(AddNewMemory.this, getResources().getString(R.string.locationGettingError), Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            Toast.makeText(AddNewMemory.this, getResources().getString(R.string.locationGettingError), Toast.LENGTH_LONG).show();
                         }
-                    } catch (IOException e) {
-                        Toast.makeText(AddNewMemory.this, getResources().getString(R.string.locationGettingError), Toast.LENGTH_LONG).show();
+
                     }
 
                 }
+            });
 
-            }
-        });
+
+        } catch (Exception e) {
+            return;
+        }
     }
 
     private void chechForLocationPermissions() {
@@ -1214,7 +1248,7 @@ public class AddNewMemory extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onError(@io.reactivex.annotations.NonNull Throwable e) {
-                Log.d("TAGERROR", "onError: "+e.getMessage());
+                Log.d("TAGERROR", "onError: " + e.getMessage());
             }
         });
 

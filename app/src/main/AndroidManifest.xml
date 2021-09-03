@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,10 +18,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BooksApp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.FavoriteImageShower" android:theme="@style/normalStatusBar"></activity>
-        <activity android:name=".ui.ActivityLanguage" />
-        <activity android:name=".ui.UserProfileActivity" />
-        <activity android:name=".ui.ActivityDisplayMode" />
+        <activity android:name=".ui.FavoriteImageShower" android:theme="@style/normalStatusBar" android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.ActivityLanguage" android:screenOrientation="portrait" />
+        <activity android:name=".ui.UserProfileActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.ActivityDisplayMode" android:screenOrientation="portrait" />
 
 
 <!--        <activity android:name=".ui.SplashActivity" />-->
@@ -32,20 +33,21 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
 <!--        </activity>-->
-        <activity android:name=".ui.TEST" />
-        <activity android:name=".ui.SplashActivity">
+        <activity android:name=".ui.TEST" android:screenOrientation="portrait" />
+        <activity android:name=".ui.SplashActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.ShowMainImageFromMemoryViewer" />
+        <activity android:name=".ui.ShowMainImageFromMemoryViewer" android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.ImageShowerFromMemory"
-            android:theme="@style/normalStatusBar" />
-        <activity android:name=".ui.MemoryViewer" />
+            android:theme="@style/normalStatusBar" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.MemoryViewer" android:screenOrientation="portrait"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.CustomeGalley"
             android:theme="@style/normalStatusBar" />
         <activity android:name=".ui.PreviewImage" />
@@ -65,13 +67,14 @@
                 <data android:mimeType="image/jpg" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.EmailVerification" />
-        <activity android:name=".ui.ResetPassword" />
+        <activity android:name=".ui.EmailVerification" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.ResetPassword" android:screenOrientation="portrait"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".ui.SignUpActivity"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".ui.LoginActivity" />
-        <activity android:name=".ui.DashBoard" />
+        <activity android:name=".ui.LoginActivity" android:screenOrientation="portrait" />
+        <activity android:name=".ui.DashBoard" android:screenOrientation="portrait" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -85,6 +88,7 @@
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
         <activity
+
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
             <intent-filter>
