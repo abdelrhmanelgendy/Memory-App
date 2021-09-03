@@ -68,6 +68,7 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
     TextView txViewConnectioDialog;
     ImageView btnBack, btnDownLoad, btnShare, btnRemoveFromFavourite;
     String memoryName;
+    private int EXTERNAL_STORAGE_RQ_Share = 44;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,6 +160,11 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
 
     }
 
+    private void startRequestPermissionForShare() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, EXTERNAL_STORAGE_RQ_Share);
+
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -174,9 +180,14 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
     ProgressDialog progressDialog;
 
     private void share() {
-        progressDialog.show(getResources().getString(R.string.gettingPhotoPath));
-        ImageToUpload imageToUpload = inPutList.get(swipedPosition);
-        ArrayList<Uri> uriBitbam = getUriBitbam(imageToUpload);
+        startRequestPermissionForShare();
+        try {
+
+            startShare();
+
+        } catch (Exception e) {
+            Toast.makeText(this, "some thing went wrong please try again", Toast.LENGTH_SHORT).show();
+        }
 
 
     }
@@ -386,7 +397,7 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
                 Intent serviceIntent = null;
                 for (int i = 0; i < urlList.size(); i++) {
                     serviceIntent = new Intent(FavoriteImageShower.this, ImagesListDownLoader.class);
-                    serviceIntent.putExtra(ImageShowerFromMemory.MEMORY_NAME, memoryName );
+                    serviceIntent.putExtra(ImageShowerFromMemory.MEMORY_NAME, memoryName);
                     serviceIntent.putExtra(ImageShowerFromMemory.SIZE, urlList.size());
                     serviceIntent.putExtra(ImageShowerFromMemory.POSITION, (i + 1));
                     serviceIntent.putExtra(ImageShowerFromMemory.URL, urlList.get(i));
@@ -409,7 +420,18 @@ public class FavoriteImageShower extends AppCompatActivity implements DownLoadIn
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 downLoad();
             }
+        } else if (requestCode == EXTERNAL_STORAGE_RQ_Share) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                startShare();
+            }
         }
+    }
+
+    private void startShare() {
+
+        progressDialog.show(getResources().getString(R.string.gettingPhotoPath));
+        ImageToUpload imageToUpload = inPutList.get(swipedPosition);
+        ArrayList<Uri> uriBitbam = getUriBitbam(imageToUpload);
     }
 
     @Override
