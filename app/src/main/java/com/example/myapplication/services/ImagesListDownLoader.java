@@ -192,22 +192,32 @@ public class ImagesListDownLoader extends Service {
     private String getPath(String memoryName, String url) {
         String directoryPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
                 + "/" + mContext.getResources().getString(R.string.app_name) + "/" + memoryName;
-        createDirectory(directoryPath);
-        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
-                + "/" + mContext.getResources().getString(R.string.app_name) + "/" + memoryName + "/"
-                + FileExtensionAndName.get(mContext).getFileName(url);
+        boolean directory = createDirectory(directoryPath);
+        if (directory) {
+            return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                    + "/" + mContext.getResources().getString(R.string.app_name) + "/" + memoryName + "/"
+                    + FileExtensionAndName.get(mContext).getFileName(url);
+        } else {
+            return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+                    + "/" + memoryName+"_"+FileExtensionAndName.get(mContext).getFileName(url);
+        }
     }
 
-    private void createDirectory(String directoryPath) {
+    private boolean createDirectory(String directoryPath) {
 
         File file = new File(directoryPath);
-
-
         boolean exists = file.exists();
         if (!exists) {
-
             boolean mkdir = file.mkdir();
-            Log.d("TAG51", "createDirectory: " + directoryPath + " " + exists + " op" + mkdir);
+            if (mkdir) {
+                return true;
+            } else {
+                return false;
+            }
+
+
+        } else {
+            return true;
         }
     }
 
