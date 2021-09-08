@@ -18,7 +18,9 @@ android application helps user to save and order his favorite memories and momen
   </ul>
 </br>
 </br>
-<a href="https://www.mediafire.com/file/tnnuxrc24aaos5y/Memory-App.apk/file">Download APK</a>
+<a href="https://www.mediafire.com/file/i6qknco3wb4arqj/Memory_App.apk/file">Download APK</a>
+</br>
+<a href="https://www.mediafire.com/file/umyl8fz89vxxzl9/Memory-App.apk/file">if the app does not install try this APK</a>
 </br>
 <p><b>you can use the following account or create yours. </b>does not contain any sensitive data<p>
 <P>Account:<b>mokupaccount@gmail.com</b> </br>Password:<b>123456</b></P>
