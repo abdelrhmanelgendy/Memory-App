@@ -33,9 +33,9 @@ android application helps user to save and order his favorite memories and momen
 
 <H1>Preview</H1>
 
-![en-black](https://user-images.githubusercontent.com/48160574/131568804-be613d68-031d-400e-b1b7-f20895011e5e.PNG)
-![ar-black](https://user-images.githubusercontent.com/48160574/131960386-249276c8-acbf-4c31-bb92-5742ae1d91b9.png)
-![en-white](https://user-images.githubusercontent.com/48160574/131568775-88760de9-c113-44a3-9b6d-1ff4c1512d9b.PNG)
+![en-black](https://user-images.githubusercontent.com/86929622/133644330-5f33cdf3-cf7c-4f07-9891-f721dbe29673.png)
+![en-white](https://user-images.githubusercontent.com/86929622/133644399-3cf38334-57eb-4832-b53e-4463e8ce1fe3.png)
+![ar-black](https://user-images.githubusercontent.com/86929622/133644451-5d3eee9d-b826-4163-8e8f-34cbdb88f82d.png)
 
 
 
